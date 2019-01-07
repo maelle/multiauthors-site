@@ -1,7 +1,7 @@
 ---
 title: Post No. 3
 authors:
-  - Cupcake Lover
+  - Jäne McDonald
   - The Cookie Monster
 tags:
   - cookie

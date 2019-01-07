@@ -1,7 +1,7 @@
 ---
 title: Post No. 1
 authors:
-  - Cupcake Lover
+  - Jäne McDonald
 tags:
   - cake
   - chocolate
