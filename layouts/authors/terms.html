@@ -1,0 +1,8 @@
+{{ define "main" }}
+  <h1>Authors</h1>
+   {{ range $key, $value := .Data.Terms.ByCount }}
+{{ printf "%#v" . }}
+      <a href="{{ $value.Name | urlize }}">{{ $value.Name }}</a>
+      <span>&#40;{{ $value.Count }}&#41; </span>
+  {{ end }}
+{{ end }}
