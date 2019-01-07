@@ -1,8 +1,16 @@
 {{ define "main" }}
   <h1>Authors</h1>
-   {{ range $key, $value := .Data.Terms.ByCount }}
-{{ printf "%#v" . }}
-      <a href="{{ $value.Name | urlize }}">{{ $value.Name }}</a>
+   {{ range $key, $value := .Data.Pages }}
+   {{ .RelPermalink }}
+   {{ end }}
+  
+    {{ range $key, $value := .Data.Terms.ByCount }}
+  {{ $name := $value.Name }}
+  {{ $authors := print "/authors/" $name "/" }}
+  {{ range first 1 (where $.Site.Pages "RelPermalink" $authors) }}
+  {{ $title := .Params.name }}
+      <a href="{{ $name | urlize }}">{{ $title }}</a>
       <span>&#40;{{ $value.Count }}&#41; </span>
+  {{ end }}
   {{ end }}
 {{ end }}
